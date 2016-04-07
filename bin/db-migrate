@@ -300,7 +300,7 @@ function onComplete(migrator, originalErr) {
     assert.ifError(err);
     log.info('Done');
     if (argv['force-exit']) {
-      log.debug('Forcing exit by infraTeam');
+      log.info('Forcing exit by infraTeam');
       process.exit(0);
     }
   });
