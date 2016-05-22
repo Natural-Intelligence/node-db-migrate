@@ -299,6 +299,10 @@ function onComplete(migrator, originalErr) {
     assert.ifError(originalErr);
     assert.ifError(err);
     log.info('Done');
+    if (global.migrationCount && global.migrationCount >= 3){
+      log.info('not forceexisting  because multi migrate');
+      return;
+    }
     if (argv['force-exit']) {
       log.info('Forcing exit by infraTeam');
       process.exit(0);
@@ -339,7 +343,7 @@ function run() {
         global.matching = folder[1];
         global.migrationMode = folder[1];
       }
-
+      log.info(`global.migrationMode: ${global.migrationMode} `)
       if(action == 'up') {
         executeUp();
       } else {
