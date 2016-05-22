@@ -52,7 +52,8 @@ exports.connect = function(config, callback) {
           });
 
           files.push('');
-
+          global.migrationCount = files.length;
+          //console.log(`filescount:${files.length}`);
           db.close = function(cb) { migrationFiles(files, callback, config, db, oldClose, cb); };
 
           db.close();
