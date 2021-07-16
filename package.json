@@ -54,7 +54,7 @@
     "parse-database-url": "~0.3.0",
     "pkginfo": "~0.3.0",
     "resolve": "^1.1.6",
-    "semver": "~5.1.0",
+    "semver": "~5.7.1",
     "tunnel-ssh": "^2.0.0"
   },
   "devDependencies": {
